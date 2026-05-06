@@ -17,7 +17,7 @@
         <span class="logo-text">Nida</span><span class="logo-dot">.</span>
       </a>
       <div class="nav-links">
-        <a href="{{ site.baseurl }}/" class="nav-link {% if page.url == '/' or page.url == '/nida-blog/' %}active{% endif %}">Blog</a>
+        <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' %}active{% endif %}">Blog</a>
         <a href="https://www.nida-os.com" class="nav-link nav-cta">Start Your Agency →</a>
       </div>
     </div>
@@ -34,9 +34,9 @@
         </div>
         <div class="footer-links">
           <h4>Resources</h4>
-          <a href="{{ site.baseurl }}/">All Posts</a>
-          <a href="{{ site.baseurl }}/siteswan-review-2026-honest-look/">SiteSwan Review</a>
-          <a href="{{ site.baseurl }}/gohighlevel-review-2026-honest/">GoHighLevel Review</a>
+          <a href="{{ '/' | relative_url }}">All Posts</a>
+          <a href="{{ '/siteswan-review-2026-honest-look/' | relative_url }}">SiteSwan Review</a>
+          <a href="{{ '/gohighlevel-review-2026-honest/' | relative_url }}">GoHighLevel Review</a>
         </div>
         <div class="footer-links">
           <h4>Platform</h4>

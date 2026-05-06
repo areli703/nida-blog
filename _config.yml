@@ -1,8 +1,8 @@
 # Site settings
 title: "Nida Blog"
 description: "Start your own white-label client acquisition agency. Business-in-a-box platform reviews, alternatives, and guides for solo operators."
-baseurl: "/nida-blog"
-url: "https://areli703.github.io"
+baseurl: ""
+url: "https://blog.nida.com"
 author: "Stephen Clarke"
 email: hello@nida-os.com
 
