@@ -1,21 +1,68 @@
 ---
 layout: default
 ---
-<article>
-    <div class="post-header">
-        <h1>{{ page.title }}</h1>
-        <div class="post-meta">
-            <span style="font-weight:600;color:var(--primary)">Stephen Clarke</span> • 
-            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time> • 
-            {{ page.content | number_of_words | divided_by: 200 }} min read
-        </div>
+
+<article class="post-single">
+  <div class="post-hero">
+    <div class="post-hero-bg"></div>
+    <div class="post-hero-glow"></div>
+    <div class="post-hero-container">
+      <div class="post-breadcrumb">
+        <a href="{{ site.baseurl }}/">Blog</a>
+        <span>›</span>
+        <span>{{ page.title | truncatewords: 5 }}</span>
+      </div>
+      <h1 class="post-hero-title">{{ page.title }}</h1>
+      <div class="post-hero-meta">
+        <span class="post-hero-date">{{ page.date | date: "%B %d, %Y" }}</span>
+        <span class="post-hero-sep">·</span>
+        <span class="post-hero-read">{{ content | number_of_words | divided_by: 200 | append: ' min read' }}</span>
+        <span class="post-hero-sep">·</span>
+        <span class="post-hero-tag">Review</span>
+      </div>
     </div>
-    <div class="post-content">
-        {{ content }}
+  </div>
+
+  <div class="post-body-container">
+    <div class="post-body">
+      {{ content }}
     </div>
-    <div class="cta-box">
-        <h3>Ready to Start Your Own Agency?</h3>
-        <p>Nida is the complete white-label platform for launching a client acquisition business. CRM, websites, chatbot, automations, and payments — all under your brand.</p>
-        <a href="https://www.nida-os.com">Start Your Business →</a>
-    </div>
+    
+    <aside class="post-sidebar">
+      <div class="sidebar-cta">
+        <span class="sidebar-label">Try Nida</span>
+        <h4 class="sidebar-title">The Platform Behind This Blog</h4>
+        <p class="sidebar-desc">White-label everything. Your brand. Your clients. Your recurring revenue. Flat monthly fee.</p>
+        <a href="https://www.nida-os.com" class="btn btn-sidebar">Start Your Agency →</a>
+      </div>
+      
+      <div class="sidebar-related">
+        <h4>Related Reviews</h4>
+        <ul>
+          <li><a href="{{ site.baseurl }}/siteswan-review-2026-honest-look/">SiteSwan Review</a></li>
+          <li><a href="{{ site.baseurl }}/gohighlevel-review-2026-honest/">GoHighLevel Review</a></li>
+          <li><a href="{{ site.baseurl }}/siteswan-vs-nida-complete-comparison/">SiteSwan vs. Nida</a></li>
+          <li><a href="{{ site.baseurl }}/best-siteswan-alternatives-2026/">Best SiteSwan Alternatives</a></li>
+          <li><a href="{{ site.baseurl }}/best-gohighlevel-alternatives-2026/">Best GoHighLevel Alternatives</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <div class="post-nav">
+    {% if page.previous %}
+    <a href="{{ page.previous.url | relative_url }}" class="post-nav-prev">
+      <span class="post-nav-label">← Previous</span>
+      <span class="post-nav-title">{{ page.previous.title }}</span>
+    </a>
+    {% endif %}
+    {% if page.next %}
+    <a href="{{ page.next.url | relative_url }}" class="post-nav-next">
+      <span class="post-nav-label">Next →</span>
+      <span class="post-nav-title">{{ page.next.title }}</span>
+    </a>
+    {% endif %}
+  </div>
+
+  <div class="post-glow-bottom"></div>
 </article>

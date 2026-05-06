@@ -1,14 +1,31 @@
+# Site settings
 title: "Nida Blog"
 description: "Start your own white-label client acquisition agency. Business-in-a-box platform reviews, alternatives, and guides for solo operators."
 baseurl: "/nida-blog"
 url: "https://areli703.github.io"
 author: "Stephen Clarke"
 email: hello@nida-os.com
+
+# Build settings
 markdown: kramdown
 highlighter: rouge
 permalink: /:title/
+timezone: America/New_York
 future: true
+
+# Excerpt settings
+excerpt_separator: "<!-- more -->"
+
+# Plugins
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - vendor/

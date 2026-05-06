@@ -1,0 +1,106 @@
+---
+layout: default
+---
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-glow glow-1"></div>
+  <div class="hero-glow glow-2"></div>
+  <div class="hero-container">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      <span>14 Honest Reviews Published</span>
+    </div>
+    <h1 class="hero-title">
+      <span class="title-line">Start a</span>
+      <span class="title-line"><span class="gradient-text">White-Label Agency</span></span>
+      <span class="title-line">That Prints Cash</span>
+    </h1>
+    <p class="hero-subtitle">Brutally honest reviews, deep-dive comparisons, and battle-tested guides for solo operators who want recurring revenue — not another job.</p>
+    <div class="hero-cta">
+      <a href="https://www.nida-os.com" class="btn btn-primary">
+        <span class="btn-text">Start Your Agency</span>
+        <span class="btn-arrow">→</span>
+      </a>
+      <a href="#latest" class="btn btn-secondary">
+        <span class="btn-text">Read the Latest</span>
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-value">14</span>
+        <span class="stat-label">Reviews</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">5</span>
+        <span class="stat-label">Alternatives</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">0</span>
+        <span class="stat-label">Affiliate Links</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section" id="latest">
+  <div class="section-container">
+    <div class="section-header">
+      <span class="section-label">Latest Intelligence</span>
+      <h2 class="section-title">Honest Reviews, <span class="gradient-text">Real Data</span></h2>
+      <p class="section-desc">Every platform tested. Every cost calculated. No sponsor bias.</p>
+    </div>
+    
+    <div class="posts-grid">
+      {% for post in site.posts limit:3 %}
+      <article class="post-card post-card-featured">
+        <div class="post-card-bg"></div>
+        <div class="post-card-badge">Featured</div>
+        <div class="post-card-meta">
+          <span class="post-card-date">{{ post.date | date: "%b %d, %Y" }}</span>
+          <span class="post-card-sep">·</span>
+          <span class="post-card-read">5 min read</span>
+        </div>
+        <h3 class="post-card-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+        <a href="{{ post.url | relative_url }}" class="post-card-link">
+          Read Review <span class="link-arrow">→</span>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+
+    <div class="section-divider">
+      <span class="divider-line"></span>
+      <span class="divider-text">All Posts</span>
+      <span class="divider-line"></span>
+    </div>
+
+    <div class="posts-list">
+      {% for post in site.posts offset:3 %}
+      <article class="post-row">
+        <div class="post-row-date">{{ post.date | date: "%b %d" }}</div>
+        <div class="post-row-content">
+          <h3 class="post-row-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p class="post-row-excerpt">{{ post.excerpt | strip_html | truncatewords: 18 }}</p>
+        </div>
+        <a href="{{ post.url | relative_url }}" class="post-row-arrow">→</a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-bg"></div>
+  <div class="cta-glow"></div>
+  <div class="cta-container">
+    <span class="cta-label">Ready to Start?</span>
+    <h2 class="cta-title">Stop researching.<br>Start <span class="gradient-text">building</span>.</h2>
+    <p class="cta-desc">Nida gives you the complete white-label platform — CRM, AI follow-up, email automation, and client dashboards under your brand. One flat monthly fee. Zero technical setup.</p>
+    <a href="https://www.nida-os.com" class="btn btn-cta">
+      <span class="btn-text">Claim Your License →</span>
+    </a>
+  </div>
+</section>

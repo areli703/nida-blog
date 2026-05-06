@@ -1,67 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if page.title %}{{ page.title }} | {% endif %}Nida Blog</title>
-    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}Start your own white-label client acquisition agency. Complete guides, comparisons, and honest reviews for solo operators building recurring revenue.{% endif %}">
-    <meta name="author" content="Stephen Clarke">
-    <style>
-        :root { --primary: #6366f1; --primary-dark: #4f46e5; --text: #0f172a; --text-muted: #64748b; --bg: #ffffff; --bg-muted: #f8fafc; --border: #e2e8f0; }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: var(--text); }
-        header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 2rem 0; text-align: center; }
-        header h1 a { color: white; text-decoration: none; font-size: 2rem; }
-        header p { opacity: 0.9; }
-        nav { background: var(--bg-muted); border-bottom: 1px solid var(--border); padding: 1rem; }
-        nav ul { list-style: none; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
-        nav a { color: var(--text-muted); text-decoration: none; font-weight: 500; }
-        nav a:hover { color: var(--primary); }
-        main { max-width: 768px; margin: 0 auto; padding: 3rem 1.5rem; }
-        .post-header { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
-        .post-header h1 { font-size: 2rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
-        .post-meta { color: var(--text-muted); font-size: 0.9rem; }
-        .post-content h2 { font-size: 1.5rem; font-weight: 700; margin: 2rem 0 0.75rem; }
-        .post-content h3 { font-size: 1.2rem; font-weight: 600; margin: 1.5rem 0 0.5rem; }
-        .post-content p { margin-bottom: 1rem; }
-        .post-content ul, .post-content ol { margin: 1rem 0 1rem 1.5rem; }
-        .post-content li { margin-bottom: 0.5rem; }
-        .post-content blockquote { border-left: 4px solid var(--primary); padding-left: 1.5rem; margin: 1.5rem 0; font-style: italic; color: var(--text-muted); }
-        .post-content table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
-        .post-content th { background: var(--bg-muted); padding: 0.75rem; text-align: left; border: 1px solid var(--border); }
-        .post-content td { padding: 0.75rem; border: 1px solid var(--border); }
-        .post-content tr:nth-child(even) { background: var(--bg-muted); }
-        .cta-box { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 2rem; border-radius: 12px; margin: 2rem 0; text-align: center; }
-        .cta-box h3 { color: white; margin-bottom: 0.75rem; }
-        .cta-box p { color: rgba(255,255,255,0.9); margin-bottom: 1.25rem; }
-        .cta-box a { display: inline-block; background: white; color: var(--primary-dark); padding: 0.875rem 2rem; border-radius: 8px; font-weight: 700; text-decoration: none; }
-        .post-list { list-style: none; }
-        .post-list li { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
-        .post-list h2 { font-size: 1.4rem; margin-bottom: 0.5rem; }
-        .post-list h2 a { color: var(--text); text-decoration: none; }
-        .post-list h2 a:hover { color: var(--primary); }
-        .post-list .excerpt { color: var(--text-muted); margin: 0.5rem 0; }
-        footer { background: var(--bg-muted); padding: 2rem; text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 3rem; }
-        footer a { color: var(--text-muted); }
-        @media (max-width: 600px) { header h1 a { font-size: 1.5rem; } nav ul { gap: 1rem; } }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
 </head>
 <body>
-    <header>
-        <h1><a href="{{ site.baseurl }}/">Nida Blog</a></h1>
-        <p>The complete guide to building a white-label agency business</p>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="{{ site.baseurl }}/">Home</a></li>
-            <li><a href="https://www.nida-os.com">Start Your Agency →</a></li>
-        </ul>
-    </nav>
-    <main>
-        {{ content }}
-    </main>
-    <footer>
-        <p>© 2026 Nida | Built by <a href="https://craftedmatrix.com">Crafted Matrix</a> | <a href="https://www.nida-os.com">Start Your Agency</a></p>
-    </footer>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="{{ site.baseurl }}/" class="logo">
+        <span class="logo-text">Nida</span><span class="logo-dot">.</span>
+      </a>
+      <div class="nav-links">
+        <a href="{{ site.baseurl }}/" class="nav-link {% if page.url == '/' or page.url == '/nida-blog/' %}active{% endif %}">Blog</a>
+        <a href="https://www.nida-os.com" class="nav-link nav-cta">Start Your Agency →</a>
+      </div>
+    </div>
+  </nav>
+
+  {{ content }}
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-logo">Nida<span class="logo-dot">.</span></span>
+          <p class="footer-desc">The complete business-in-a-box platform for starting your own white-label client acquisition agency.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <a href="{{ site.baseurl }}/">All Posts</a>
+          <a href="{{ site.baseurl }}/siteswan-review-2026-honest-look/">SiteSwan Review</a>
+          <a href="{{ site.baseurl }}/gohighlevel-review-2026-honest/">GoHighLevel Review</a>
+        </div>
+        <div class="footer-links">
+          <h4>Platform</h4>
+          <a href="https://www.nida-os.com">Nida OS</a>
+          <a href="https://craftedmatrix.com">Crafted Matrix</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© {{ site.time | date: '%Y' }} Nida. Built with intention by Crafted Matrix.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
 </html>
