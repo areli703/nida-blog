@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<article>
+    <div class="post-header">
+        <h1>{{ page.title }}</h1>
+        <div class="post-meta">
+            <span style="font-weight:600;color:var(--primary)">Stephen Clarke</span> • 
+            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time> • 
+            {{ page.content | number_of_words | divided_by: 200 }} min read
+        </div>
+    </div>
+    <div class="post-content">
+        {{ content }}
+    </div>
+    <div class="cta-box">
+        <h3>Ready to Start Your Own Agency?</h3>
+        <p>Nida is the complete white-label platform for launching a client acquisition business. CRM, websites, chatbot, automations, and payments — all under your brand.</p>
+        <a href="https://www.nida-os.com">Start Your Business →</a>
+    </div>
+</article>
