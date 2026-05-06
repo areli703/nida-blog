@@ -54,7 +54,7 @@ layout: default
     
     <div class="posts-grid">
       {% for post in site.posts limit:3 %}
-      <article class="post-card post-card-featured">
+      <article class="post-card post-card-featured" data-url="{{ post.url | relative_url }}">
         <div class="post-card-bg"></div>
         <div class="post-card-badge">Featured</div>
         <div class="post-card-meta">
@@ -79,7 +79,7 @@ layout: default
 
     <div class="posts-list">
       {% for post in site.posts offset:3 %}
-      <article class="post-row">
+      <article class="post-row" data-url="{{ post.url | relative_url }}">
         <div class="post-row-date">{{ post.date | date: "%b %d" }}</div>
         <div class="post-row-content">
           <h3 class="post-row-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>

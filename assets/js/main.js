@@ -96,7 +96,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Hero parallax
+  // Post card click — whole card navigates
+  document.querySelectorAll('.post-card[data-url]').forEach(card => {
+    card.addEventListener('click', function(e) {
+      // Don't navigate if clicking an actual link inside the card
+      if (e.target.closest('a')) return;
+      window.location.href = this.dataset.url;
+    });
+  });
+
+  // Post row click — whole row navigates
+  document.querySelectorAll('.post-row[data-url]').forEach(row => {
+    row.addEventListener('click', function(e) {
+      if (e.target.closest('a')) return;
+      window.location.href = this.dataset.url;
+    });
+  });
   const hero = document.querySelector('.hero');
   if (hero) {
     window.addEventListener('scroll', function() {
